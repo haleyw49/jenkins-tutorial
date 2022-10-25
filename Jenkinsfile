@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "YourDockerUser/my_java_application"
+        registry = "hwiese2/calculator_app"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
@@ -78,7 +78,7 @@ pipeline {
 
       post {
           failure {
-              mail to: 'AnEmail@gmail.com',
+              mail to: 'haleywiese49@gmail.com',
               subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
               body: "Something is wrong with ${env.BUILD_URL}"
           }
